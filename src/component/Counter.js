@@ -11,6 +11,10 @@ export default class Counter extends Component{
         this.props.Multiple(mulitpier,this.props.index)
     }
 
+    delay = () =>{
+                 setTimeout(()=>this.props.onIncrement(this.props.index),1000);
+             };
+
     render() {
         const { index,value, onIncrement, onDecrement } = this.props;
         return (
@@ -25,6 +29,9 @@ export default class Counter extends Component{
                 </button>
                 <button onClick={this.multipley}>
                     *
+                </button>
+                <button onClick={this.delay}>
+                    Increment Async
                 </button>
                 <input
                     type="text"
